@@ -1,5 +1,5 @@
 import express from 'express'
-import { addAlarm, deleteAlarmById, getActiveAlarm, getAlarmHistory, getAlarmTypes, getAlarmsById } from '../Controller/Alarms.js';
+import { addAlarm, deleteAlarmById, getActiveAlarm, getAlarmHistory, getAlarmTypes, getAlarmsById, updateAlarm } from '../Controller/Alarms.js';
 
 export const AlarmRoutes = express.Router()
 
@@ -11,6 +11,9 @@ AlarmRoutes.delete('/alarms/:id', deleteAlarmById);
 
 AlarmRoutes.post('/alarms', addAlarm);
 
+AlarmRoutes.put('/alarms', updateAlarm);
+
 AlarmRoutes.get('/active_alarm', getActiveAlarm);
 
 AlarmRoutes.get('/alarm_history', getAlarmHistory);
+
