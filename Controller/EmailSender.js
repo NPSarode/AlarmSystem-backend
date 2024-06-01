@@ -1,19 +1,22 @@
-import { createTransport } from "nodemailer"
-
-const transporter = createTransport({
-    service: 'gmail',
-    port: 465,
-    auth: {
-        user: 'nikhil.sarode@kneoautomation.com',
-        pass: 'Nikhil@123'
-    }
-})
+import { createTestAccount, createTransport } from "nodemailer";
 
 export const sendEmail = async (email) => {
-    await transporter.sendMail({
-        from: 'nikhil.sarode@kneoautomation.com',
-        to: 'nikhil.sarode@kneoautomation.com',
-        subject: "Alarm Generated",
-        html:`<p>This is a system generated email. Kindly do not reply.</p>`
-    }).then(data => {console.log(data)}).catch((err) => {console.log(err)})
-}
+  await createTestAccount();
+
+  const transporter = createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    auth: {
+        user: 'merlin.konopelski@ethereal.email',
+        pass: '9U86nRCaX2XZgUgDyH'
+    },
+  });
+
+  const info = await transporter.sendMail({
+    from: '"Nikhil Sarode 👻" <nikhil@gmail.com>', // sender address
+    to: "nikhilsarode2020@gmail.com", // list of receivers
+    subject: "Hello ✔", // Subject line
+    text: "Hello world?", // plain text body
+    html: "<b>Hello world?</b>", // html body
+  });
+};

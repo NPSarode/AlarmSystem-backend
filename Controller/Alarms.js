@@ -69,9 +69,9 @@ export const updateAlarm = async (request, response) => {
   await db.query(query);
   const { rows } = await db.query(`SELECT * FROM get_alarm_by_alarmId(${id})`);
 
-  // if (rows[0].status) {
-  //   await sendEmail("nikhilsarode2020@gmail.com");
-  // }
+  if (rows[0].status) {
+    await sendEmail("nikhilsarode2020@gmail.com");
+  }
 
   response.send(...rows);
 };
@@ -82,6 +82,24 @@ export const getActiveAlarm = async (request, response) => {
 };
 
 export const getAlarmHistory = async (request, response) => {
-  const { rows } = await db.query(`SELECT * FROM get_alarm_history();`);
+  const { rows } = await db.query(`SELECT * FROM get_alarm_history()`);
+  response.send(rows);
+};
+
+export const getTotalAlarmCount = async (request, response) => {
+
+  const { rows } = await db.query(`SELECT * FROM get_alarm_counts()`);
+  response.send(rows);
+};
+
+export const getToatlAlarmsByMachineId = async (request, response) => {
+  const { id } = request.params
+  const { rows } = await db.query(`SELECT * FROM get_machine_alarm_count(${id})`);
+  response.send(rows);
+};
+
+export const getAlarmLogHistoryById = async (request, response) => {
+  const { id } = request.params
+  const { rows } = await db.query(`SELECT * FROM get_alarm_log_history_by_id(${id})`);
   response.send(rows);
 };
