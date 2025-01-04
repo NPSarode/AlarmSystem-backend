@@ -69,9 +69,9 @@ export const updateAlarm = async (request, response) => {
   await db.query(query);
   const { rows } = await db.query(`SELECT * FROM get_alarm_by_alarmId(${id})`);
 
-  if (rows[0].status) {
-    await sendEmail("nikhilsarode2020@gmail.com");
-  }
+  // if (rows[0].status) {
+  //   await sendEmail("nikhilsarode2020@gmail.com");
+  // }
 
   response.send(...rows);
 };
