@@ -55,13 +55,13 @@ AlarmSystem-backend/
    DB_HOST=your_database_host
    DB_USER=your_database_user
    DB_PASSWORD=your_database_password
-   DB_NAME=alarm_system
+   DB_NAME=your_database_name
    JWT_SECRET=your_jwt_secret
    ```
 
 4. **Set up the database**:
 
-   - Ensure MySQL is running.
+   - Ensure PostgreSQL is running.
    - Execute the `alarm_system.sql` script to create the necessary database and tables.
 
 5. **Start the server**:
