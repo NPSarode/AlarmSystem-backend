@@ -116,26 +116,10 @@ AlarmSystem-backend/
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
----
 
-## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
 
----
-
-## 👤 Author
-
-**Nikhil Sarode**
-
-- 📧 Email: nikhilsarode2020@gmail.com
-- 🔗 GitHub: [NPSarode](https://github.com/NPSarode)
-- 💼 LinkedIn: [i-nikhilsarode](https://www.linkedin.com/in/i-nikhilsarode)
-
----
 
 *Thank you for checking out the Alarm System Backend! If you have any questions or feedback, feel free to reach out.*
